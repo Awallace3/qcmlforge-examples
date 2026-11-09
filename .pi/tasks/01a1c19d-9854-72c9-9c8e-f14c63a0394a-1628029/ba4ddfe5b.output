@@ -1,0 +1,17 @@
+.                                                                        [100%]
+=============================== warnings summary ===============================
+../../miniconda3/envs/qcml/lib/python3.12/site-packages/torch_geometric/llm/utils/backend_utils.py:26
+  /home/awallace43/miniconda3/envs/qcml/lib/python3.12/site-packages/torch_geometric/llm/utils/backend_utils.py:26: DeprecationWarning: `torch_geometric.distributed` has been deprecated since 2.7.0 and will no longer be maintained. For distributed training, refer to our tutorials on distributed training at https://pytorch-geometric.readthedocs.io/en/latest/tutorial/distributed.html or cuGraph examples at https://github.com/rapidsai/cugraph-gnn/tree/main/python/cugraph-pyg/cugraph_pyg/examples
+    from torch_geometric.distributed import (
+
+../../miniconda3/envs/qcml/lib/python3.12/site-packages/torch/jit/_script.py:1480
+../../miniconda3/envs/qcml/lib/python3.12/site-packages/torch/jit/_script.py:1480
+  /home/awallace43/miniconda3/envs/qcml/lib/python3.12/site-packages/torch/jit/_script.py:1480: DeprecationWarning: `torch.jit.script` is deprecated. Please switch to `torch.compile` or `torch.export`.
+    warnings.warn(
+
+tests/test_ap2_tf_paper_route.py: 10 warnings
+  /home/awallace43/miniconda3/envs/qcml/lib/python3.12/site-packages/qcelemental/models/molecule.py:377: DeprecationWarning: The chararray class is deprecated and will be removed in a future release. Use an ndarray with a string or bytes dtype instead.
+    values["symbols"] = np.char.chararray.title(self.symbols)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+1 passed, 13 warnings in 5.46s

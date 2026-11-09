@@ -1,0 +1,29 @@
+{
+  "id": "bb4c0f159",
+  "name": "Verify CDK2 rankings",
+  "command": "CUDA_VISIBLE_DEVICES='' OMP_NUM_THREADS=8 QCMLFORGE_AUTO_DOWNLOAD_PRETRAINED=1 /home/awallace43/miniconda3/envs/qcml/bin/python -u demo.py",
+  "description": "Run all 16 CDK2 complexes with the ap2_tf_paper ensemble on CPU.",
+  "status": "completed",
+  "outputPath": ".pi/tasks/01a1c19d-9854-72c9-9c8e-f14c63a0394a-1628029/bb4c0f159.output",
+  "cwd": "/home/awallace43/demos/ap2-pdbs",
+  "startTime": 1794249729656,
+  "endTime": 1794250048336,
+  "exitCode": 0,
+  "signal": null,
+  "pid": 1636317,
+  "bytesWritten": 3938,
+  "isAgent": false,
+  "surviveReload": false,
+  "notified": true,
+  "notifyOnCompletion": true,
+  "triggerOnCompletion": true,
+  "timeoutSeconds": 1800,
+  "shellPolicy": {
+    "policy": "inherit",
+    "executable": "/bin/bash",
+    "argvPrefix": [
+      "-c"
+    ],
+    "dialect": "bash"
+  }
+}

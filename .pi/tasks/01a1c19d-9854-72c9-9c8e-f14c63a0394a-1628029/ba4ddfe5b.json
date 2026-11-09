@@ -1,0 +1,29 @@
+{
+  "id": "ba4ddfe5b",
+  "name": "Check AP2 paper parity",
+  "command": "cd /home/awallace43/gits/qcmlforge && CUDA_VISIBLE_DEVICES='' OMP_NUM_THREADS=2 QCMLFORGE_AUTO_DOWNLOAD_PRETRAINED=1 /home/awallace43/miniconda3/envs/qcml/bin/python -m pytest -q tests/test_ap2_tf_paper_route.py::test_paper_ensemble_reproduces_reference_interaction_energy",
+  "description": "Independent pinned-energy sanity check of the exact named paper ensemble used by demo.py.",
+  "status": "completed",
+  "outputPath": ".pi/tasks/01a1c19d-9854-72c9-9c8e-f14c63a0394a-1628029/ba4ddfe5b.output",
+  "cwd": "/home/awallace43/demos/ap2-pdbs",
+  "startTime": 1794250044429,
+  "endTime": 1794250051603,
+  "exitCode": 0,
+  "signal": null,
+  "pid": 1705268,
+  "bytesWritten": 1659,
+  "isAgent": false,
+  "surviveReload": false,
+  "notified": true,
+  "notifyOnCompletion": true,
+  "triggerOnCompletion": true,
+  "timeoutSeconds": 300,
+  "shellPolicy": {
+    "policy": "inherit",
+    "executable": "/bin/bash",
+    "argvPrefix": [
+      "-c"
+    ],
+    "dialect": "bash"
+  }
+}

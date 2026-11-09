@@ -1,0 +1,29 @@
+{
+  "id": "b8720aacb",
+  "name": "Compare current QCML AP2",
+  "command": "CUDA_VISIBLE_DEVICES='' OMP_NUM_THREADS=8 QCMLFORGE_AUTO_DOWNLOAD_PRETRAINED=1 /home/awallace43/miniconda3/envs/qcml/bin/python -u - <<'PY'\nimport json\nfrom pathlib import Path\nfrom scipy.stats import kendalltau, spearmanr\nfrom demo import HERE, rank_series\ncomponents, ranking = rank_series(HERE / 'cdk2_ligands.csv', batch_size=4, weights='qcmlforge')\nprint('\\nCurrent corrected qcmlforge AP2 ensemble:')\nprint(components.to_string(index=False, float_format='{:.2f}'.format))\nprint(ranking.to_string(index=False, float_format='{:.2f}'.format))\ntau = float(kendalltau(ranking.E_total_ap2, ranking.dG_exp).statistic)\nrho = float(spearmanr(ranking.E_total_ap2, ranking.dG_exp).statistic)\nresult = {'weights': 'qcmlforge', 'batch_size': 4, 'pocket_radius_angstrom': 12.0, 'n': len(ranking), 'tau': tau, 'rho': rho, 'components': components.to_dict(orient='records'), 'ranking': ranking.to_dict(orient='records')}\nprint('\\nFULL_PRECISION_RESULT ' + json.dumps(result))\nprint(f'\\nKendall tau = {tau:.2f}   Spearman rho = {rho:.2f}   (n = {len(ranking)})')\nPY",
+  "description": "Current corrected QCMLForge ensemble on identical PDBs, 12 A contact pockets and batch size used in the paper-weight run.",
+  "status": "completed",
+  "outputPath": ".pi/tasks/01a1c19d-9854-72c9-9c8e-f14c63a0394a-1628029/b8720aacb.output",
+  "cwd": "/home/awallace43/demos/ap2-pdbs",
+  "startTime": 1794250435592,
+  "endTime": 1794250768801,
+  "exitCode": 0,
+  "signal": null,
+  "pid": 1787120,
+  "bytesWritten": 8387,
+  "isAgent": false,
+  "surviveReload": false,
+  "notified": true,
+  "notifyOnCompletion": true,
+  "triggerOnCompletion": true,
+  "timeoutSeconds": 1800,
+  "shellPolicy": {
+    "policy": "inherit",
+    "executable": "/bin/bash",
+    "argvPrefix": [
+      "-c"
+    ],
+    "dialect": "bash"
+  }
+}

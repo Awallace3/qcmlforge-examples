@@ -1,0 +1,17 @@
+ligand,pdb,ligand_charge,dg_exp_kcal_mol
+17,pdbs/cdk2_17.pdb,0,-7.04
+28,pdbs/cdk2_28.pdb,0,-11.11
+22,pdbs/cdk2_22.pdb,0,-7.86
+30,pdbs/cdk2_30.pdb,0,-9.81
+1h1r,pdbs/cdk2_1h1r.pdb,0,-7.67
+1h1s,pdbs/cdk2_1h1s.pdb,0,-11.25
+21,pdbs/cdk2_21.pdb,0,-7.83
+1oiy,pdbs/cdk2_1oiy.pdb,0,-9.79
+1oiu,pdbs/cdk2_1oiu.pdb,0,-9.08
+31,pdbs/cdk2_31.pdb,0,-9.54
+29,pdbs/cdk2_29.pdb,0,-9.88
+26,pdbs/cdk2_26.pdb,0,-8.43
+1oi9,pdbs/cdk2_1oi9.pdb,0,-9.74
+20,pdbs/cdk2_20.pdb,0,-8.72
+32,pdbs/cdk2_32.pdb,0,-9.75
+1h1q,pdbs/cdk2_1h1q.pdb,0,-8.18

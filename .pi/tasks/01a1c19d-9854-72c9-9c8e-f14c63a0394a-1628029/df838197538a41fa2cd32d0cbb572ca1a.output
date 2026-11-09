@@ -1,0 +1,35 @@
+Warning: No project session found with id 'delegate-1080a3fd49beca2c19daf11b8a9fa067'; creating a new session with that id.
+**The main difference is the pocket definition—not merely minimization timing.** Both use “12 Å,” but measure it differently.
+
+Paths below are relative to `/home/awallace43/data/TAQO22/campaigns/cdsg-cdk2-v1/`, except `demo.py`.
+
+### Selection and coordinates
+
+- **Campaign:** `preparation_code/preparation.py:163–185` loads the **source reference ligand**, computes its **mass-weighted center**, and selects receptor residues **before complex minimization**. `load_ligand()` adds hydrogens; the center therefore uses all ligand atoms, not just heavy atoms (`geometry.py:11–18`).
+- CDK2’s reference is **SDF record 0, ligand 17**, with radius 12 Å (`source_manifest.json`, CDK2 entry; `crosswalk.csv`).
+- `geometry.py:33–44` selects whole residues having any heavy atom within 12 Å **of that single center**. This is a center-based sphere.
+- `template.py:21–49` saves those residue identities and maps the same fixed selection onto subsequent preparations. `preparation.py:219–243` then minimizes each complex and exports **minimized coordinates using the already-selected residues**. It does **not** reselect around the minimized reference or individual minimized ligand.
+- **Demo:** `/home/awallace43/demos/ap2-pdbs/demo.py:188–195` selects whole residues within 12 Å **of any heavy atom of each minimized ligand**. This is a union of atom-centered neighborhoods, extending farther along the ligand’s shape and varying between complexes.
+
+Thus, matching the radius alone does not reproduce campaign inputs. The demo’s definition naturally includes more surrounding protein; minimization-dependent boundary changes are an additional difference.
+
+### Atom-count confirmation
+
+`prepared/cdk2/0000/preparation.json:599–604` records:
+
+- pocket: **888 atoms, including 14 H caps**
+- ligand: **45 atoms**
+- fragment charges: **+3 and 0**
+
+That gives **933 total**, matching `predictions/ap2-member-0/cdk2.csv`. These are not heavy-atom counts: `preparation_code/pilot.py:162,225` loads `qcml_molecule.json` and reports `len(molecule.symbols)`.
+
+The supplied demo count, **1353 + 45 = 1398**, therefore describes a genuinely different pocket, not an atom-count reporting convention.
+
+### Charges and caps
+
+- **Campaign charge:** `export.py:13–17,38–60` sums original force-field particle charges over selected protein atoms and ligand atoms separately, requiring each sum to lie within **0.005** of an integer. Added cap hydrogens do not introduce a separate charge adjustment.
+- **Demo charge:** `demo.py:85–110,204–205` sums protonation-aware residue formal charges, including termini. Ligand charges come from its CSV during batch ranking; all 16 entries are neutral, agreeing with campaign `crosswalk.csv`. Different residue selections need not have equal pocket charges.
+- **Cap geometry agrees:** campaign `geometry.py:47–58` and demo `CAP_LENGTH`/lines 207–215 use retained N–H **1.01 Å**, retained C–H **1.09 Å**, and S–H **1.34 Å**, directed toward the removed bonded atom. Campaign uses topology bonds; demo detects peptide/disulfide bonds geometrically. Neither re-minimizes caps.
+- Both export pocket first, ligand second, as singlet fragments with geometry converted to bohr.
+
+**Interpretation:** These different environments can plausibly shift absolute interaction energies while preserving congeneric ordering. They do not establish any particular energy offset or rho/tau agreement without a controlled comparison. Exact reproduction should use campaign `qcml_molecule.json`; compare equivalent ensemble/member predictions too, since the demo defaults to an ensemble whereas `ap2-member-0` is one member.

@@ -1,0 +1,65 @@
+cdk2_17.pdb: ligand LIG (45 atoms, charge +0); pocket 79 residues, 1353 atoms incl. 27 H caps, charge -1
+cdk2_28.pdb: ligand LIG (53 atoms, charge +0); pocket 82 residues, 1404 atoms incl. 29 H caps, charge -1
+cdk2_22.pdb: ligand LIG (49 atoms, charge +0); pocket 78 residues, 1330 atoms incl. 25 H caps, charge -1
+cdk2_30.pdb: ligand LIG (51 atoms, charge +0); pocket 82 residues, 1404 atoms incl. 29 H caps, charge -1
+cdk2_1h1r.pdb: ligand LIG (45 atoms, charge +0); pocket 79 residues, 1353 atoms incl. 27 H caps, charge -1
+cdk2_1h1s.pdb: ligand LIG (50 atoms, charge +0); pocket 83 residues, 1418 atoms incl. 29 H caps, charge -1
+cdk2_21.pdb: ligand LIG (49 atoms, charge +0); pocket 78 residues, 1334 atoms incl. 27 H caps, charge -1
+cdk2_1oiy.pdb: ligand LIG (49 atoms, charge +0); pocket 80 residues, 1370 atoms incl. 27 H caps, charge -1
+cdk2_1oiu.pdb: ligand LIG (50 atoms, charge +0); pocket 81 residues, 1392 atoms incl. 27 H caps, charge +0
+cdk2_31.pdb: ligand LIG (50 atoms, charge +0); pocket 80 residues, 1370 atoms incl. 27 H caps, charge -1
+cdk2_29.pdb: ligand LIG (56 atoms, charge +0); pocket 82 residues, 1404 atoms incl. 29 H caps, charge -1
+cdk2_26.pdb: ligand LIG (49 atoms, charge +0); pocket 80 residues, 1370 atoms incl. 27 H caps, charge -1
+cdk2_1oi9.pdb: ligand LIG (46 atoms, charge +0); pocket 79 residues, 1353 atoms incl. 27 H caps, charge -1
+cdk2_20.pdb: ligand LIG (49 atoms, charge +0); pocket 80 residues, 1376 atoms incl. 29 H caps, charge -1
+cdk2_32.pdb: ligand LIG (54 atoms, charge +0); pocket 81 residues, 1381 atoms incl. 27 H caps, charge -1
+cdk2_1h1q.pdb: ligand LIG (45 atoms, charge +0); pocket 79 residues, 1353 atoms incl. 27 H caps, charge -1
+running on the CPU
+Loading pre-trained APNet2_MPNN model from /home/awallace43/.cache/huggingface/hub/models--awallace3--qcmlforge/snapshots/9ea7627a111f71773de10503dddb2dd9ca85d141/qcmlforge/pair_models/ap2_0.pt
+Loaded embedded AtomMPNN from checkpoint
+self.dataset=None
+Loaded embedded AtomMPNN from checkpoint
+Loaded embedded AtomMPNN from checkpoint
+Loaded embedded AtomMPNN from checkpoint
+Loaded embedded AtomMPNN from checkpoint
+Processing mols...
+
+Current corrected qcmlforge AP2 ensemble:
+ligand  E_total  E_elst  E_exch  E_ind  E_disp
+    28  -129.35  -89.92  118.98 -51.17 -107.24
+    32  -129.22  -91.28  120.98 -50.49 -108.44
+  1h1s  -128.93  -92.17  115.72 -47.19 -105.28
+    29  -122.66  -73.85   96.19 -44.56 -100.43
+    30  -109.81  -68.13  102.09 -40.41 -103.36
+    20  -107.12  -73.84  105.20 -42.02  -96.46
+  1oiu  -104.26  -63.79   92.35 -40.24  -92.59
+    26  -103.62  -61.61   85.03 -36.79  -90.26
+    22  -102.18  -61.11   94.58 -37.28  -98.37
+  1oiy  -101.38  -59.66   84.83 -34.96  -91.58
+    21  -100.30  -58.32   85.91 -37.26  -90.63
+  1oi9  -100.21  -61.22   83.09 -35.44  -86.64
+    31   -94.76  -51.27   84.67 -36.22  -91.94
+    17   -93.31  -51.35   80.28 -34.32  -87.91
+  1h1r   -91.92  -51.01   79.76 -33.48  -87.19
+  1h1q   -90.85  -52.68   79.60 -32.48  -85.29
+ligand  E_total_ap2  dG_exp  rank_ap2  rank_exp
+  1h1s      -128.93  -11.25         3         1
+    28      -129.35  -11.11         1         2
+    29      -122.66   -9.88         4         3
+    30      -109.81   -9.81         5         4
+  1oiy      -101.38   -9.79        10         5
+    32      -129.22   -9.75         2         6
+  1oi9      -100.21   -9.74        12         7
+    31       -94.76   -9.54        13         8
+  1oiu      -104.26   -9.08         7         9
+    20      -107.12   -8.72         6        10
+    26      -103.62   -8.43         8        11
+  1h1q       -90.85   -8.18        16        12
+    22      -102.18   -7.86         9        13
+    21      -100.30   -7.83        11        14
+  1h1r       -91.92   -7.67        15        15
+    17       -93.31   -7.04        14        16
+
+FULL_PRECISION_RESULT {"weights": "qcmlforge", "batch_size": 4, "pocket_radius_angstrom": 12.0, "n": 16, "tau": 0.5833333333333334, "rho": 0.7470588235294118, "components": [{"ligand": "28", "E_total": -129.3500961303711, "E_elst": -89.92349548339844, "E_exch": 118.9806411743164, "E_ind": -51.167626953125, "E_disp": -107.23961486816407}, {"ligand": "32", "E_total": -129.22216873168946, "E_elst": -91.28089904785156, "E_exch": 120.97991790771485, "E_ind": -50.48523941040039, "E_disp": -108.43594818115234}, {"ligand": "1h1s", "E_total": -128.92678680419922, "E_elst": -92.16968536376953, "E_exch": 115.72061004638672, "E_ind": -47.19466552734375, "E_disp": -105.28304595947266}, {"ligand": "29", "E_total": -122.65635833740234, "E_elst": -73.84836883544922, "E_exch": 96.18869018554688, "E_ind": -44.56453094482422, "E_disp": -100.43214874267578}, {"ligand": "30", "E_total": -109.80575408935547, "E_elst": -68.13154754638671, "E_exch": 102.09432830810547, "E_ind": -40.41310424804688, "E_disp": -103.35543060302734}, {"ligand": "20", "E_total": -107.11808395385742, "E_elst": -73.8427230834961, "E_exch": 105.20131072998046, "E_ind": -42.01992263793945, "E_disp": -96.45674896240234}, {"ligand": "1oiu", "E_total": -104.26495895385742, "E_elst": -63.786468505859375, "E_exch": 92.35082092285157, "E_ind": -40.23621597290039, "E_disp": -92.59309539794921}, {"ligand": "26", "E_total": -103.62039070129394, "E_elst": -61.60633850097656, "E_exch": 85.0342300415039, "E_ind": -36.786908340454104, "E_disp": -90.2613739013672}, {"ligand": "22", "E_total": -102.17610702514648, "E_elst": -61.107408142089845, "E_exch": 94.58162078857421, "E_ind": -37.27647933959961, "E_disp": -98.37384033203125}, {"ligand": "1oiy", "E_total": -101.37809829711914, "E_elst": -59.65547332763672, "E_exch": 84.82562255859375, "E_ind": -34.96382217407226, "E_disp": -91.58442535400391}, {"ligand": "21", "E_total": -100.2977466583252, "E_elst": -58.318345642089845, "E_exch": 85.90858612060546, "E_ind": -37.25819892883301, "E_disp": -90.62978820800781}, {"ligand": "1oi9", "E_total": -100.21298408508301, "E_elst": -61.222974395751955, "E_exch": 83.09201202392578, "E_ind": -35.43773002624512, "E_disp": -86.64429168701172}, {"ligand": "31", "E_total": -94.76191024780273, "E_elst": -51.270198822021484, "E_exch": 84.6695770263672, "E_ind": -36.220140075683595, "E_disp": -91.94114837646484}, {"ligand": "17", "E_total": -93.30536041259765, "E_elst": -51.35299301147461, "E_exch": 80.2770263671875, "E_ind": -34.3231819152832, "E_disp": -87.90621185302734}, {"ligand": "1h1r", "E_total": -91.92160530090332, "E_elst": -51.01206512451172, "E_exch": 79.76130676269531, "E_ind": -33.48185157775879, "E_disp": -87.18899536132812}, {"ligand": "1h1q", "E_total": -90.85279083251953, "E_elst": -52.67946319580078, "E_exch": 79.60114288330078, "E_ind": -32.48102722167969, "E_disp": -85.29344329833984}], "ranking": [{"ligand": "1h1s", "E_total_ap2": -128.92678680419922, "dG_exp": -11.25, "rank_ap2": 3, "rank_exp": 1}, {"ligand": "28", "E_total_ap2": -129.3500961303711, "dG_exp": -11.11, "rank_ap2": 1, "rank_exp": 2}, {"ligand": "29", "E_total_ap2": -122.65635833740234, "dG_exp": -9.88, "rank_ap2": 4, "rank_exp": 3}, {"ligand": "30", "E_total_ap2": -109.80575408935547, "dG_exp": -9.81, "rank_ap2": 5, "rank_exp": 4}, {"ligand": "1oiy", "E_total_ap2": -101.37809829711914, "dG_exp": -9.79, "rank_ap2": 10, "rank_exp": 5}, {"ligand": "32", "E_total_ap2": -129.22216873168946, "dG_exp": -9.75, "rank_ap2": 2, "rank_exp": 6}, {"ligand": "1oi9", "E_total_ap2": -100.21298408508301, "dG_exp": -9.74, "rank_ap2": 12, "rank_exp": 7}, {"ligand": "31", "E_total_ap2": -94.76191024780273, "dG_exp": -9.54, "rank_ap2": 13, "rank_exp": 8}, {"ligand": "1oiu", "E_total_ap2": -104.26495895385742, "dG_exp": -9.08, "rank_ap2": 7, "rank_exp": 9}, {"ligand": "20", "E_total_ap2": -107.11808395385742, "dG_exp": -8.72, "rank_ap2": 6, "rank_exp": 10}, {"ligand": "26", "E_total_ap2": -103.62039070129394, "dG_exp": -8.43, "rank_ap2": 8, "rank_exp": 11}, {"ligand": "1h1q", "E_total_ap2": -90.85279083251953, "dG_exp": -8.18, "rank_ap2": 16, "rank_exp": 12}, {"ligand": "22", "E_total_ap2": -102.17610702514648, "dG_exp": -7.86, "rank_ap2": 9, "rank_exp": 13}, {"ligand": "21", "E_total_ap2": -100.2977466583252, "dG_exp": -7.83, "rank_ap2": 11, "rank_exp": 14}, {"ligand": "1h1r", "E_total_ap2": -91.92160530090332, "dG_exp": -7.67, "rank_ap2": 15, "rank_exp": 15}, {"ligand": "17", "E_total_ap2": -93.30536041259765, "dG_exp": -7.04, "rank_ap2": 14, "rank_exp": 16}]}
+
+Kendall tau = 0.58   Spearman rho = 0.75   (n = 16)
